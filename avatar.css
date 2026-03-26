@@ -1,0 +1,57 @@
+/* =========================
+AVATAR — L7 MOTOR
+========================= */
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  /* Style premium cohérent avec tout le site */
+  border: 3px solid rgba(0,0,0,0.12);
+  background-color: rgba(0,0,0,0.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+
+  transition: transform .25s ease, box-shadow .25s ease;
+  display: block;
+}
+
+.avatar:hover {
+  transform: scale(1.06);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+}
+
+/* Version plus petite */
+.avatar--sm {
+  width: 60px;
+  height: 60px;
+  border-width: 2px;
+}
+
+/* Version grande */
+.avatar--lg {
+  width: 160px;
+  height: 160px;
+  border-width: 4px;
+}
+
+/* Wrapper centré si besoin */
+.avatar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Version centrée verticalement + responsive */
+.avatar-wrapper--center {
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+/* Pour les avatars dans les cartes (ex : conseiller commercial) */
+.avatar--card {
+  margin: 0 auto 12px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+}

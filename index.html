@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L7 Motor — Luxury & Performance Cars</title>
+  <meta name="description" content="L7 Motor : véhicules premium, sport, SUV et électriques.">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Styles ajoutés : fond animé + tableau -->
+  <style>
+    body {
+      background: linear-gradient(120deg, #ffffff, #f5f5f5, #ffffff);
+      background-size: 300% 300%;
+      animation: bgMove 12s ease infinite;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .car-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 15px;
+    }
+
+    .car-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .car-table tr td:first-child {
+      font-weight: 600;
+      width: 40%;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="container navbar__inner">
+
+    <a class="navbar__brand" href="#top">
+      <span class="logo-mark">
+        <span class="logo-core"></span>
+        <span class="logo-ring"></span>
+      </span>
+      <span class="logo-text">L7 Motor</span>
+    </a>
+
+    <nav class="navbar__nav">
+      <a href="#cars">Véhicules</a>
+      <a href="#history">Histoire</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="cart-action">
+      <button class="btn btn--primary" id="cartBtn">
+        Panier <span class="pill" id="cartCount">0</span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="banner" style="background-image: url('image/imageconcess.jpg');">
+  <div class="container">
+    <div class="banner__grid">
+
+      <div class="banner__content">
+        <p class="badge">Luxury • Performance • Premium</p>
+        <h1>L7 Motor — Luxury & Performance Cars</h1>
+        <p class="lead">
+          Concession située au <strong>106 rue de Versailles, 78150 Le Chesnay</strong>.<br>
+          SUV, berlines, sportives et électriques sélectionnées avec soin.
+        </p>
+
+        <div class="banner__cta">
+          <a class="btn btn--primary" href="#cars">Voir les modèles</a>
+          <a class="btn" href="#contact">Nous contacter</a>
+        </div>
+
+        <ul class="trust">
+          <li>✅ Véhicules certifiés</li>
+          <li>✅ Historique transparent</li>
+          <li>✅ Garantie & financement</li>
+        </ul>
+      </div>
+
+      <div class="banner__card card">
+        <h2 class="card__title">Pourquoi L7 Motor ?</h2>
+        <ul class="steps">
+          <li><strong>Qualité</strong> — sélection premium</li>
+          <li><strong>Confiance</strong> — historique vérifié</li>
+          <li><strong>Service</strong> — accompagnement complet</li>
+        </ul>
+        <a class="btn btn--primary btn--block" href="#cars">Découvrir</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VEHICULES -->
+<section id="cars" class="section">
+  <div class="container">
+
+    <div class="section__head">
+      <h2>Nos véhicules</h2>
+      <p class="muted">SUV • Berlines • Sport • Électrique</p>
+
+      <div class="filters">
+        <button class="chip is-active" data-filter="all">Tout</button>
+        <button class="chip" data-filter="suv">SUV</button>
+        <button class="chip" data-filter="berline">Berline</button>
+        <button class="chip" data-filter="sport">Sport</button>
+        <button class="chip" data-filter="elec">Électrique</button>
+      </div>
+    </div>
+
+    <div class="grid products" id="productGrid">
+
+      <!-- GLE -->
+      <article class="card product" data-tags="suv" data-price="78900">
+        <div class="product__media">
+          <img src="image/gle.jpg" alt="Mercedes GLE">
+          <span class="tag">SUV</span>
+        </div>
+        <h3>Mercedes GLE</h3>
+        <p class="muted">SUV Premium • 400ch • AMG Line</p>
+        <ul class="spec">
+          <li>Essence</li>
+          <li>Automatique</li>
+          <li>2025</li>
+        </ul>
+        <div class="product__foot">
+          <span class="price">78 900€</span>
+          <div class="product__actions">
+            <button class="btn" onclick="showCarDetails('gle')">Voir détails</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- A3 -->
+      <article class="card product" data-tags="berline" data-price="46900">
+        <div class="product__media">
+          <img src="image/audia3.jpg" alt="Audi A3">
+          <span class="tag">Berline</span>
+        </div>
+        <h3>Audi A3 Sportback</h3>
+        <p class="muted">150ch • S Line • Micro-Hybride</p>
+        <ul class="spec">
+          <li>Essence</li>
+          <li>Automatique</li>
+          <li>2025</li>
+        </ul>
+        <div class="product__foot">
+          <span class="price">46 900€</span>
+          <div class="product__actions">
+            <button class="btn" onclick="showCarDetails('a3')">Voir détails</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- RS6 -->
+      <article class="card product" data-tags="sport" data-price="125000">
+        <div class="product__media">
+          <img src="image/rs6.jpg" alt="Audi RS6">
+          <span class="tag tag--hot">Sport</span>
+        </div>
+        <h3>Audi RS6</h3>
+        <p class="muted">600ch • Performance • Quattro</p>
+        <ul class="spec">
+          <li>Essence</li>
+          <li>Automatique</li>
+          <li>2025</li>
+        </ul>
+        <div class="product__foot">
+          <span class="price">125 000€</span>
+          <div class="product__actions">
+            <button class="btn" onclick="showCarDetails('rs6')">Voir détails</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- M3 -->
+      <article class="card product" data-tags="sport" data-price="89900">
+        <div class="product__media">
+          <img src="image/bmwm3.jpg" alt="BMW M3">
+          <span class="tag tag--premium">Sport</span>
+        </div>
+        <h3>BMW M3</h3>
+        <p class="muted">480ch • Competition • Propulsion</p>
+        <ul class="spec">
+          <li>Essence</li>
+          <li>Automatique</li>
+          <li>2025</li>
+        </ul>
+        <div class="product__foot">
+          <span class="price">89 900€</span>
+          <div class="product__actions">
+            <button class="btn" onclick="showCarDetails('m3')">Voir détails</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION FICHE DÉTAILLÉE -->
+<section id="carDetails" class="section" style="display:none;">
+  <div class="container card">
+    <h2 id="carDetailsTitle"></h2>
+
+    <img id="carDetailsImage" style="width:100%; border-radius:12px; margin-bottom:20px;">
+
+    <h3>Caractéristiques</h3>
+    <table class="car-table">
+      <tbody id="carDetailsTable"></tbody>
+    </table>
+
+    <h3>Équipements</h3>
+    <ul id="carDetailsEquip" class="spec"></ul>
+
+    <h3>Financement</h3>
+    <table class="car-table">
+      <tbody id="carFinanceTable"></tbody>
+    </table>
+
+    <a class="btn btn--primary" href="#contact">Contacter la concession</a>
+  </div>
+</section>
+
+<!-- HISTOIRE -->
+<section id="history" class="section section--alt">
+  <div class="container card">
+    <h2>Notre histoire</h2>
+    <p>
+      L7 Motor est fondée en 2020 par deux amis d’enfance, <strong>Louis</strong> et <strong>Lucas</strong>,
+      passionnés d’automobile depuis toujours. Leur objectif : proposer une sélection de véhicules premium,
+      sportifs et fiables, avec une transparence totale et un accompagnement humain.
+    </p>
+    <p>
+      En quelques années, L7 Motor devient une référence locale grâce à son exigence,
+      son expertise et son amour du détail. Chaque véhicule est soigneusement choisi,
+      contrôlé et préparé pour offrir une expérience haut de gamme.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section section--alt">
+  <div class="container">
+    <div class="card">
+      <h2>Contact</h2>
+      <p class="muted">
+        📍 106 rue de Versailles, 78150 Le Chesnay<br>
+        ✉️ contact@l7motor.com
+      </p>
+      <a
+        class="btn btn--primary"
+        href="https://www.google.com/maps/search/?api=1&query=106+rue+de+Versailles+Le+Chesnay"
+        target="_blank"
+      >
+        Voir sur la carte
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p>© <span id="year"></span> L7 Motor — Luxury & Performance Cars</p>
+  </div>
+</footer>
+
+<!-- PANIER -->
+<div class="drawer" id="cartDrawer" aria-hidden="true" hidden>
+  <div class="drawer__panel card">
+    <div class="drawer__head">
+      <h2>Panier</h2>
+      <button class="btn btn--ghost" id="closeCart">Fermer</button>
+    </div>
+
+    <ul class="cart" id="cartList"></ul>
+
+    <div class="drawer__foot">
+      <div class="summary__total">
+        <span>Total</span>
+        <strong id="cartTotal">0€</strong>
+      </div>
+      <button class="btn btn--primary btn--block">Checkout (démo)</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT INTÉGRÉ -->
+<script>
+// Année footer
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Données voitures
+const cars = {
+  gle: {
+    title: "Mercedes GLE",
+    image: "image/gle.jpg",
+    table: {
+      "Prix": "78 900 €",
+      "Moteur": "V6 3.0L",
+      "Puissance": "400 ch",
+      "Transmission": "Automatique 9G-Tronic",
+      "Entraînement": "4Matic",
+      "0-100 km/h": "5,7 s",
+      "Consommation": "9,8 L / 100 km",
+      "Année": "2025"
+    },
+    equipment: [
+      "AMG Line",
+      "Toit panoramique",
+      "LED Multibeam",
+      "Intérieur cuir",
+      "Suspension AIRMATIC"
+    ],
+    finance: {
+      "Apport conseillé": "15 000 €",
+      "Durée": "48 mois",
+      "Taux d’intérêt": "3,2 %",
+      "Mensualité estimée": "1 490 € / mois"
+    }
+  },
+
+  a3: {
+    title: "Audi A3 Sportback",
+    image: "image/audia3.jpg",
+    table: {
+      "Prix": "46 900 €",
+      "Moteur": "1.5 TFSI",
+      "Puissance": "150 ch",
+      "Transmission": "S-Tronic",
+      "Entraînement": "Traction",
+      "0-100 km/h": "8,4 s",
+      "Consommation": "6,2 L / 100 km",
+      "Année": "2025"
+    },
+    equipment: [
+      "Pack S Line",
+      "Bluetooth",
+      "Ambiance LED",
+      "Virtual Cockpit",
+      "Régulateur adaptatif"
+    ],
+    finance: {
+      "Apport conseillé": "8 000 €",
+      "Durée": "48 mois",
+      "Taux d’intérêt": "2,9 %",
+      "Mensualité estimée": "720 € / mois"
+    }
+  },
+
+  rs6: {
+    title: "Audi RS6 Performance",
+    image: "image/rs6.jpg",
+    table: {
+      "Prix": "125 000 €",
+      "Moteur": "V8 4.0L",
+      "Puissance": "600 ch",
+      "Transmission": "Automatique 8 rapports",
+      "Entraînement": "Quattro",
+      "0-100 km/h": "3,6 s",
+      "Consommation": "14,3 L / 100 km",
+      "Remorquage": "2 100 kg",
+      "Coffre": "850 L"
+    },
+    equipment: [
+      "Pack Performance",
+      "Échappement RS",
+      "Freins sport",
+      "Suspension sport RS",
+      "LED Matrix"
+    ],
+    finance: {
+      "Apport conseillé": "25 000 €",
+      "Durée": "60 mois",
+      "Taux d’intérêt": "3,9 %",
+      "Mensualité estimée": "1 890 € / mois"
+    }
+  },
+
+  m3: {
+    title: "BMW M3 Competition",
+    image: "images/bmwm3.jpg",
+    table: {
+      "Prix": "89 900 €",
+      "Moteur": "6 cylindres 3.0L",
+      "Puissance": "480 ch",
+      "Transmission": "Automatique 8 rapports",
+      "Entraînement": "Propulsion",
+      "0-100 km/h": "4,2 s",
+      "Consommation": "10,1 L / 100 km",
+      "Année": "2025"
+    },
+    equipment: [
+      "Pack Compétition",
+      "Sièges M Sport",
+      "Laser LED",
+      "Échappement M",
+      "Suspension adaptative"
+    ],
+    finance: {
+      "Apport conseillé": "18 000 €",
+      "Durée": "48 mois",
+      "Taux d’intérêt": "3,5 %",
+      "Mensualité estimée": "1 420 € / mois"
+    }
+  }
+};
+
+// Affichage fiche détaillée
+function showCarDetails(id) {
+  const car = cars[id];
+  if (!car) return;
+
+  document.getElementById("carDetailsTitle").textContent = car.title;
+  document.getElementById("carDetailsImage").src = car.image;
+
+  // Caractéristiques
+  const table = document.getElementById("carDetailsTable");
+  table.innerHTML = "";
+  for (const key in car.table) {
+    table.innerHTML += `
+      <tr>
+        <td><strong>${key}</strong></td>
+        <td>${car.table[key]}</td>
+      </tr>
+    `;
+  }
+
+  // Équipements
+  const equipList = document.getElementById("carDetailsEquip");
+  equipList.innerHTML = "";
+  car.equipment.forEach(eq => {
+    equipList.innerHTML += `<li>${eq}</li>`;
+  });
+
+  // Financement
+  const financeTable = document.getElementById("carFinanceTable");
+  financeTable.innerHTML = "";
+  for (const key in car.finance) {
+    financeTable.innerHTML += `
+      <tr>
+        <td><strong>${key}</strong></td>
+        <td>${car.finance[key]}</td>
+      </tr>
+    `;
+  }
+
+  // Afficher section
+  const section = document.getElementById("carDetails");
+  section.style.display = "block";
+  section.scrollIntoView({ behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>

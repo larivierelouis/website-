@@ -1,0 +1,133 @@
+/* =========================
+BANNER — L7 MOTOR
+========================= */
+
+.banner {
+  padding: 150px 0 80px;
+  position: relative;
+  color: var(--text);
+
+  /* Fond visuel premium + image concession */
+  background:
+    radial-gradient(circle at 10% 20%, rgba(0,0,0,0.06), transparent 55%),
+    radial-gradient(circle at 90% 10%, rgba(0,0,0,0.05), transparent 55%),
+    linear-gradient(180deg, #ffffff, #f3f4f6),
+    var(--banner-img) center / cover no-repeat;
+}
+
+/* Voile pour lisibilité du texte */
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.95) 0%,
+    rgba(255,255,255,0.8) 45%,
+    rgba(255,255,255,0.25) 100%
+  );
+  pointer-events: none;
+}
+
+.banner > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.banner__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Contenu texte */
+.banner__content {
+  max-width: 520px;
+}
+
+.banner__content h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.banner__content .lead {
+  font-size: 17px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* CTA */
+.banner__cta {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* Liste de confiance */
+.trust {
+  list-style: none;
+  padding: 0;
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.trust li {
+  margin-bottom: 6px;
+}
+
+/* Carte à droite */
+.banner__card {
+  padding: 24px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.banner__card .card__title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.banner__card .steps {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 20px;
+}
+
+.banner__card .steps li {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .banner {
+    padding: 120px 0 60px;
+  }
+
+  .banner__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .banner__content h1 {
+    font-size: 32px;
+  }
+
+  .banner__cta {
+    flex-direction: column;
+  }
+}

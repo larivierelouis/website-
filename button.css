@@ -1,0 +1,133 @@
+/* =========================
+BUTTONS — L7 MOTOR
+========================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.04);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  transition:
+    transform .15s ease,
+    background .15s ease,
+    box-shadow .15s ease,
+    border-color .15s ease,
+    opacity .15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+
+/* État désactivé */
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================
+PRIMARY BUTTON
+========================= */
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  border: none;
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: linear-gradient(135deg, #000, #333);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* =========================
+SECONDARY / LIGHT BUTTON
+========================= */
+
+.btn--secondary {
+  background: #f3f4f6;
+  border-color: #e5e7eb;
+}
+
+.btn--secondary:hover {
+  background: #e5e7eb;
+}
+
+/* =========================
+GHOST BUTTON
+========================= */
+
+.btn--ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+}
+
+.btn--ghost:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* =========================
+BLOCK BUTTON
+========================= */
+
+.btn--block {
+  width: 100%;
+}
+
+/* =========================
+SMALL BUTTON
+========================= */
+
+.btn--sm {
+  padding: 8px 12px;
+  font-size: 13px;
+  border-radius: 10px;
+}
+
+/* =========================
+ICON BUTTON (ROND)
+========================= */
+
+.btn--icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 999px;
+}
+
+/* =========================
+PILL BADGE (PANIER)
+========================= */
+
+.pill {
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.25);
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}

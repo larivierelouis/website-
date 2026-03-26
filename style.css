@@ -1,0 +1,274 @@
+/* =========================
+GOOGLE FONT
+========================= */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* =========================
+UI KIT – IMPORTS
+========================= */
+@import url("components/container.css");
+@import url("components/navbar.css");
+@import url("components/banner.css");
+@import url("components/button.css");
+@import url("components/card.css");
+@import url("components/grid.css");
+@import url("components/list.css");
+@import url("components/form.css");
+@import url("components/drawer.css");
+@import url("components/motion.css");
+@import url("components/avatar.css");
+
+/* =========================
+DESIGN TOKENS (THEME)
+========================= */
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f5f5f5;
+  --surface: rgba(0,0,0,0.04);
+  --border: rgba(0,0,0,0.12);
+  --text: #111;
+  --muted: #555;
+  --brand: #111;
+  --brand-2: #444;
+  --radius: 16px;
+  --shadow: 0 18px 60px rgba(0,0,0,0.15);
+
+  --banner-img: url("../images/imageconcess.jpg");
+}
+
+/* =========================
+FOND ANIMÉ PREMIUM
+========================= */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+
+  background: linear-gradient(120deg, #ffffff, #f5f5f5, #ffffff);
+  background-size: 300% 300%;
+  animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =========================
+BASE
+========================= */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+h1, h2, h3 {
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+
+p { margin: 0 0 12px; color: var(--muted); }
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+.is-locked { overflow: hidden; }
+
+.micro { font-size: 12px; color: var(--muted); }
+
+.muted { color: var(--muted); }
+
+/* =========================
+LAYOUT GÉNÉRAL
+========================= */
+.section {
+  padding: 60px 0;
+}
+
+.section--alt {
+  background: var(--bg-alt);
+}
+
+.section__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* =========================
+FILTERS / CHIPS
+========================= */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.02);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.chip.is-active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* =========================
+CARDS / PRODUITS
+========================= */
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.product__media {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.product__media img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.tag {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  font-size: 12px;
+}
+
+.tag--hot { background: #b91c1c; }
+.tag--premium { background: #111827; }
+
+.spec {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.spec li + li {
+  margin-top: 4px;
+}
+
+.product__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.product__actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* =========================
+TABLEAU CARACTÉRISTIQUES + FINANCEMENT
+========================= */
+.car-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.car-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.car-table tr td:first-child {
+  font-weight: 600;
+  width: 40%;
+}
+
+/* =========================
+FOOTER
+========================= */
+.footer {
+  border-top: 1px solid var(--border);
+  background: #fafafa;
+  padding: 18px 0;
+  margin-top: 40px;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+}
+
+/* =========================
+LOGO ANIMÉ — L7 MOTOR
+========================= */
+.logo-mark {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  margin-right: 10px;
+}
+
+.logo-core {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  z-index: 2;
+  animation: corePulse 2.4s ease-in-out infinite;
+}
+
+.logo-ring {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  animation: ringRotate 6s linear infinite;
+}
+
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes corePulse {
+  0% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.9; }
+}
